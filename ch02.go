@@ -1,8 +1,10 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"math/rand"
+	"strings"
 )
 
 const boilingF = 212.0
@@ -17,6 +19,7 @@ func boilingPoint() {
 	var f = boilingF
 	var c = (f - 32) * 5 / 9
 	fmt.Printf("boiling point = %gF or %g C\n", f, c)
+	flagMethod()
 }
 
 func ftocPrint() {
@@ -35,4 +38,14 @@ func gif() {
 	t := 0.0
 
 	fmt.Println(freq, t)
+}
+
+func flagMethod() {
+	n := flag.Bool("n", false, "omit trailing newline")
+	sep := flag.String("s", " ", "seperator")
+	flag.Parse()
+	fmt.Print(strings.Join(flag.Args(), *sep))
+	if !*n {
+		fmt.Println()
+	}
 }
