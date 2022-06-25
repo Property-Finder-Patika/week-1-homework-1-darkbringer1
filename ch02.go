@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 )
 
 const boilingF = 212.0
@@ -9,6 +10,7 @@ const boilingF = 212.0
 func main() {
 	boilingPoint()
 	ftocPrint()
+	gif()
 }
 
 func boilingPoint() {
@@ -26,4 +28,11 @@ func ftocPrint() {
 
 func fToC(f float64) float64 {
 	return (f - 32) * 5 / 9
+}
+
+func gif() {
+	freq := rand.Float64() * 3.0
+	t := 0.0
+
+	fmt.Println(freq, t)
 }
