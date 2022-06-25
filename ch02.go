@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"os"
 )
 
 const boilingF = 212.0
@@ -28,4 +27,3 @@ func ftocPrint() {
 func fToC(f float64) float64 {
 	return (f - 32) * 5 / 9
 }
-
